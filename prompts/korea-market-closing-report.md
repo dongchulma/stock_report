@@ -27,6 +27,13 @@
 - 마지막에 `자동 리포트 by Claude | <YYYY-MM-DD HH:MM> KST` 푸터를 남긴다
 
 ## 실행 절차
+0. **휴장일 확인 (가장 먼저, 반드시 자동으로 판단할 것)**: 오늘이 한국 증시 휴장일(주말 또는 공휴일)인지 WebSearch로 확인한다.
+   이 작업은 headless로 실행되어 사용자에게 질문할 수 없다 — 휴장 여부를 스스로 판단하고, 절대 사용자에게 되묻지 않는다.
+   휴장이면 리포트 작성과 텔레그램 전송을 모두 건너뛰고, 곧바로 아래를 실행한 뒤 종료한다:
+   ```
+   python3 scripts/update_status.py stock_report <YYYY-MM-DD> skipped_holiday
+   ```
+   개장일이면 아래 1~3단계를 정상적으로 진행한다.
 1. 리포트를 로컬 파일(예: `/tmp/report.md`)로 작성한다.
 2. GitHub에는 리포트 파일을 push하지 않는다. 텔레그램으로만 전송한다 (환경변수 `TG_BOT_TOKEN`, `TG_CHAT_ID`는 이미 설정되어 있음):
    ```
