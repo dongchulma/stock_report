@@ -17,7 +17,7 @@ def main():
     message = sys.argv[3] if len(sys.argv) > 3 else f"update {repo_path}"
 
     api = f"https://api.github.com/repos/{repo}/contents/{repo_path}"
-    headers = {"Authorization": f"token {token}", "User-Agent": "claude_repo-bot"}
+    headers = {"Authorization": f"token {token}", "User-Agent": "stock_report-bot"}
 
     sha = None
     try:
