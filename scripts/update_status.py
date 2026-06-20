@@ -17,7 +17,7 @@ def main():
     key, date, status = sys.argv[1], sys.argv[2], sys.argv[3]
 
     api = f"https://api.github.com/repos/{repo}/contents/_status.json"
-    headers = {"Authorization": f"token {token}", "User-Agent": "claude_repo-bot"}
+    headers = {"Authorization": f"token {token}", "User-Agent": "stock_report-bot"}
 
     sha = None
     data = {}
