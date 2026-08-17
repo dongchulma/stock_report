@@ -10,8 +10,8 @@
     "updated_at": "2026-08-17T03:00:27.922705Z"
   },
   "us-market-morning": {
-    "date": "2026-08-17",
-    "status": "skipped_holiday",
-    "updated_at": "2026-08-16T23:20:42.973397Z"
+    "date": "2026-08-18",
+    "status": "success",
+    "updated_at": "2026-08-17T23:23:42.640086Z"
   }
 }
